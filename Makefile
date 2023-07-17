@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -Wall -Wextra -g
+CFLAGS = -Wall -Werror -g
 
 TARGET = FileCompression
 SRC_DIR = src
