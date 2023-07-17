@@ -3,3 +3,7 @@
 .idea/*
 .vscode
 .vscode/*
+
+# Remove C specific build files
+FileCompression
+*.o
