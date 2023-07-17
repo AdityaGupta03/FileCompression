@@ -1,0 +1,5 @@
+# Remove any IDE/editor settings/files
+.idea
+.idea/*
+.vscode
+.vscode/*
