@@ -6,7 +6,9 @@ Freq_Table* buildFreqTable(FILE *fptr) {
 
     printf("\nBuilding frequency table...\n");
 
-    Freq_Table *freq_table = NULL;
+    table_size = 100;
+    Freq_Table *freq_table = malloc(table_size * sizeof(Freq_Table));
+    int num_found = 0;
     char read;
     while ((read = fgetc(fptr)) != EOF) {
         int found = 0;
@@ -19,18 +21,24 @@ Freq_Table* buildFreqTable(FILE *fptr) {
         }
 
         if (!found) {
-            table_size++;
-            freq_table = realloc(freq_table, table_size * sizeof(Freq_Table));
-            if (freq_table == NULL) {
-                perror("realloc");
-                exit(EXIT_FAILURE);
+            if (num_found >= table_size) {
+                table_size += 10;
+                freq_table = realloc(freq_table, table_size * sizeof(Freq_Table));
+                if (freq_table == NULL) {
+                    perror("realloc");
+                    exit(EXIT_FAILURE);
+                }
             }
-
-            freq_table[table_size - 1].character = read;
-            freq_table[table_size - 1].freq = 1;
+            freq_table[num_found].character = read;
+            freq_table[num_found].freq = 1;
+            num_found++;
         }
     }
 
+    Freq_Table *tmp = freq_table + num_found;
+    free(tmp);
+
+    table_size = num_found;
     return (table_size != 0) ? freq_table : NULL;
 
 }
