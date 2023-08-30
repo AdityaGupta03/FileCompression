@@ -17,13 +17,13 @@ int main() {
 
     while (1) {
         int action = promptMenu();
-        if (action == 1) {
+        if (action == 1) { // Compress a file
             fileCompression();
         }
-        else if (action == 2) {
+        else if (action == 2) { // Decompress a file
 
         }
-        else {
+        else { // Exit program
             printf("\nGoodbye!!!\n");
             exit(EXIT_SUCCESS);
         }
