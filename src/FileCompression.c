@@ -7,7 +7,6 @@
 #endif
 
 int main() {
-
     if (is_unix)
         system("clear");
     else
@@ -28,11 +27,9 @@ int main() {
             exit(EXIT_SUCCESS);
         }
     }
-
 }
 
 int promptMenu() {
-
     while (1) {
         printf("\nMenu:\n");
         printf("1. Compress a file.\n2. Decompress a file.\n3. Exit program\n\nAction (enter the number): ");
@@ -55,11 +52,9 @@ int promptMenu() {
 
         return action;
     }
-
 }
 
 void fileCompression() {
-
     // Get file to compress
     printf("\nEnter a file to compress: ");
     char file_name[100];
@@ -88,5 +83,4 @@ void fileCompression() {
     // TODO Encode file
     // TODO Padding
     // TODO Write compressed file
-
 }
