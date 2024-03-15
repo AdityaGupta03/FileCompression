@@ -67,6 +67,7 @@ void fileCompression() {
         perror("fopen");
         exit(EXIT_FAILURE);
     }
+
     // Build frequency table
     Freq_Table *freq_table = buildFreqTable(fptr);
     fclose(fptr);
@@ -75,11 +76,12 @@ void fileCompression() {
         return;
     }
 
-    // TODO Build Huffman tree
-    Huffman_Node *head = buildHuffmanTree(freq_table);
+    // Build Huffman tree
+    HuffmanNode *tree = buildHuffmanTree(freq_table);
     free(freq_table);
 
     // TODO Generate Huffman codes
+    
     // TODO Encode file
     // TODO Padding
     // TODO Write compressed file
