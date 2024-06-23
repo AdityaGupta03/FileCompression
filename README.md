@@ -1,2 +1,2 @@
 # FileCompression
-FileCompression in C using Huffman
+FileCompression in C++ using Huffman encoding.
